@@ -29,5 +29,17 @@
 			</select>
 			<input type="submit" name="rejoindre" value="rejoindre">
 		</form>
+		<script>
+			<?php
+				if (isset($_COOKIE['nomSalon'])) {
+					echo '
+						option = document.querySelectorAll("option");';
+					echo '
+						for (i = 0; i < x.length; i += 1) {
+							if (option[i].value == ' . $_COOKIE['nomSalon'] .')
+								option[i].selected = "selected";';
+				}
+			?>
+		</script>
 	</body>
 </html>
