@@ -1,0 +1,24 @@
+h1 {
+	text-align: center;
+}
+
+#centre {
+	display: inline-flex;
+	align-content: center;
+}
+
+p {
+}
+
+form {
+	align-content: center; 
+}
+
+div {
+	align-content: center; 	
+}
+
+img {
+	width: 700px;
+	height: 700px;
+}

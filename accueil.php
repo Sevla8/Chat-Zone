@@ -8,38 +8,38 @@
 	<head lang="fr">
 		<title>Accueil</title>
 		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="accueil.css">
 	</head>
 	<body>
-		<h2>CHAT-ZONE - Home</h2>
-		<form method="post" action="salon.php">
-			<label for="pseudoInput">Pseudo</label>
-			<input type="name" name="pseudo" id="pseudoInput"<?php if (isset($_COOKIE['pseudoSalon'])) echo 'value="' . $_COOKIE['pseudoSalon'] . '"'; ?>>
-			Salon
-			<select name="salon">
-				<option value="WIM">WIM</option>
-				<option value="APL">APL</option>
-				<option value="ASR">ASR</option>
-				<option value="SGBD">SGBD</option>
-				<option value="PPP">PPP</option>
-				<option value="EGOD">EGOD</option>
-				<option value="EC">EC</option>
-				<option value="ENG">ENG</option>
-				<option value="ALG">ALG</option>
-				<option value="GRAPH">GRAPH</option>
-			</select>
-			<input type="submit" name="rejoindre" value="rejoindre">
-		</form>
-		<script>
-			<?php
-				if (isset($_COOKIE['nomSalon'])) {
-					echo '
-						option = document.querySelectorAll("option");';
-					echo '
-						for (i = 0; i < x.length; i += 1) {
-							if (option[i].value == ' . $_COOKIE['nomSalon'] .')
-								option[i].selected = "selected";';
-				}
-			?>
-		</script>
+		<h1>CHAT-ZONE - Home</h1>
+		<div id="centre">
+			<p>
+				<img src="chat.png" alt="imageInutile">
+			</p>
+			<form method="post" action="salon.php">
+				<div id="pseudo">
+					<label for="pseudoInput">Pseudo</label>
+					<input type="name" name="pseudo" id="pseudoInput"<?php if (isset($_COOKIE['pseudo'])) echo 'value="' . $_COOKIE['pseudo'] . '"'; ?>>
+				</div>
+				<div id="salon">
+					Salon
+					<select name="salon">
+						<option <?php if(isset($_COOKIE['salon']) && $_COOKIE['salon'] == "WIM") echo "selected"; ?> value="WIM">WIM</option>
+						<option <?php if(isset($_COOKIE['salon']) && $_COOKIE['salon'] == "APL") echo "selected"; ?> value="APL">APL</option>
+						<option <?php if(isset($_COOKIE['salon']) && $_COOKIE['salon'] == "ASR") echo "selected"; ?> value="ASR">ASR</option>
+						<option <?php if(isset($_COOKIE['salon']) && $_COOKIE['salon'] == "SGBD") echo "selected"; ?> value="SGBD">SGBD</option>
+						<option <?php if(isset($_COOKIE['salon']) && $_COOKIE['salon'] == "PPP") echo "selected"; ?> value="PPP">PPP</option>
+						<option <?php if(isset($_COOKIE['salon']) && $_COOKIE['salon'] == "EGOD") echo "selected"; ?> value="EGOD">EGOD</option>
+						<option <?php if(isset($_COOKIE['salon']) && $_COOKIE['salon'] == "EC") echo "selected"; ?> value="EC">EC</option>
+						<option <?php if(isset($_COOKIE['salon']) && $_COOKIE['salon'] == "ENG") echo "selected"; ?> value="ENG">ENG</option>
+						<option <?php if(isset($_COOKIE['salon']) && $_COOKIE['salon'] == "ALG") echo "selected"; ?> value="ALG">ALG</option>
+						<option <?php if(isset($_COOKIE['salon']) && $_COOKIE['salon'] == "GRAPH") echo "selected"; ?> value="GRAPH">GRAPH</option>
+					</select>
+				</div>
+				<div id="rejoindre">
+					<input type="submit" name="rejoindre" value="rejoindre" title="Rejoindre le salon">
+				</div>
+			</form>
+		</div>
 	</body>
 </html>
