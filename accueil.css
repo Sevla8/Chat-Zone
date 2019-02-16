@@ -1,24 +1,33 @@
 h1 {
 	text-align: center;
+	margin: 0;
+	padding: 10px;
 }
 
-#centre {
-	display: inline-flex;
-	align-content: center;
-}
-
-p {
+#container {
+	display: flex;
+	margin: 0;
+	padding: 0;
 }
 
 form {
-	align-content: center; 
+	width: 50%;
+	margin: auto;
+	padding: 0;
+	text-align: center;
 }
 
-div {
-	align-content: center; 	
+p {
+	width: 50%;
+	margin-left: 100px;
+	padding: 0;
 }
 
 img {
-	width: 700px;
-	height: 700px;
+	width: 90%;
+	height: 90%;
+}
+
+#pseudo, #salon, #rejoindre {
+	margin: 20px;
 }
