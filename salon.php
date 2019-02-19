@@ -14,12 +14,10 @@
 		$_POST['salon'] == 'ENG' || 
 		$_POST['salon'] == 'ALG' || 
 		$_POST['salon'] == 'GRAPH')) {
-			$_POST['pseudo'] = filter_var($_POST['pseudo'], FILTER_SANITIZE_STRING);
-			$_POST['salon'] = filter_var($_POST['salon'], FILTER_SANITIZE_STRING);
-			$_SESSION['pseudo'] = $_POST['pseudo'];
-			$_SESSION['salon'] = $_POST['salon'];
-			setcookie('pseudo', $_POST['pseudo']);
-			setcookie('salon', $_POST['salon']);
+			$_SESSION['pseudo'] = filter_var($_POST['pseudo'], FILTER_SANITIZE_STRING);
+			$_SESSION['salon'] = filter_var($_POST['salon'], FILTER_SANITIZE_STRING);
+			setcookie('pseudo', $_SESSION['pseudo']);
+			setcookie('salon', $_SESSION['salon']);
 	}
 ?>
 <!doctype html>
@@ -46,9 +44,9 @@
 					$_POST['message'] = null; // pour qu'il ne reprenne pas ce qu'on a deja posté
 				}
 			}
-			if (!isset($_SESSION['salon']) || !isset($_SESSION['pseudo']) || strlen($_SESSION['pseudo']) == 0) {
-				echo '<h2>ACCES RESTRICTED</h2>';
-				echo '<a href="accueil.php">HOME</a>';
+			if (!isset($_SESSION['salon']) || !isset($_SESSION['pseudo'])) {
+				echo '<h1>ACCES RESTRICTED</h1>';
+				echo '<a href="accueil.php"><== HOME</a>';
 			}
 			else {
 				echo '<h1>CHAT-ZONE - ' . $_SESSION['salon'] . '</h1>';

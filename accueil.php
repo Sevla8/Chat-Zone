@@ -23,7 +23,7 @@
 
 				<div id="pseudo">
 					<label for="pseudoInput">Pseudo</label>
-					<input type="name" name="pseudo" id="pseudoInput"<?php if (isset($_COOKIE['pseudo'])) echo 'value="' . $_COOKIE['pseudo'] . '"'; ?>>
+					<input type="name" name="pseudo" id="pseudoInput" value="<?php if (isset($_COOKIE['pseudo'])) echo $_COOKIE['pseudo']; ?>">
 				</div>
 
 				<div id="salon">
