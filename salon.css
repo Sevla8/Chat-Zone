@@ -1,0 +1,38 @@
+body {
+	height: 100%;
+}
+
+h1 {
+	text-align: center;
+	margin: 0;
+	padding: 10px;
+}
+
+#chat {
+	border-width: 10px;
+	border-color: black;
+	border-style: groove;
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px black;
+	margin: auto;
+	padding: 20px;
+	width: 90%;
+	height: 300px;
+	overflow: scroll;
+	word-wrap: break-word;
+}
+
+#message {
+	margin: 20px;
+	padding: 20px;
+	text-align: center;
+}
+
+span {
+	font-size: 0.7em;
+	font-style: italic;
+}
+
+textarea {
+	width: 60%;
+}
