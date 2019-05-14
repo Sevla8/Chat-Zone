@@ -4,7 +4,7 @@
 
 	include('db.php');
 
-	$messageList = getListMessage();
+	$messageList = getListMessage($_SESSION['salon']);
 
 	foreach($messageList as $message) {
 		echo '<p class="'.$message['pseudo'].'">';
